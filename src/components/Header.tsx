@@ -1,15 +1,41 @@
 import React from 'react';
 import { Layout, Menu } from 'antd';
+import { Link } from 'gatsby';
 
 const { Header } = Layout;
+
+const Routes = [
+  {
+    text: 'Home',
+    to: '/',
+  },
+  {
+    text: 'About',
+    to: '/about',
+  },
+  {
+    text: 'Contact',
+    to: '/contact',
+  },
+  {
+    text: 'Tags',
+    to: '/tags',
+  },
+  {
+    text: 'Recipes',
+    to: '/recipes',
+  },
+];
 
 const HeaderComponent: React.FC = () => (
   <Header>
     <div className="logo" />
-    <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-      <Menu.Item key="1">Home</Menu.Item>
-      <Menu.Item key="2">Recipes</Menu.Item>
-      <Menu.Item key="3">About</Menu.Item>
+    <Menu mode="horizontal" defaultSelectedKeys={['2']}>
+      {Routes.map(({ text, to }) => (
+        <Menu.Item key={text + to}>
+          <Link to={to}>{text}</Link>
+        </Menu.Item>
+      ))}
     </Menu>
   </Header>
 );
