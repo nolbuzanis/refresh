@@ -1,13 +1,10 @@
 import React from 'react';
-import { PageProps, Link } from 'gatsby';
+import { PageProps } from 'gatsby';
+import Layout from '../components/Layout';
 
 import 'normalize.css';
+import 'antd/dist/antd.min.css';
 
-const Home: React.FC<PageProps> = () => (
-  <main>
-    <p>A TypeScript starter for Gatsby. Great for advanced users.</p>
-    <Link to="/about">About me.</Link>
-  </main>
-);
+const Home: React.FC<PageProps> = () => <Layout>this is the home route</Layout>;
 
 export default Home;

@@ -2,6 +2,6 @@ import { PageProps } from 'gatsby';
 import React from 'react';
 import Layout from '../components/Layout';
 
-const About: React.FC<PageProps> = () => <Layout>testing about</Layout>;
+const Recipes: React.FC<PageProps> = () => <Layout>recipes page</Layout>;
 
-export default About;
+export default Recipes;
